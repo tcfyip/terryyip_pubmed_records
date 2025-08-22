@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Terry Cheuk‑Fung Yip, PhD – Profile & Publications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #2f81f7;
+      --danger: #ffa198;
+      --ok: #3fb950;
+      --border: #30363d;
+    }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 980px; margin: 32px auto; padding: 0 16px; }
+
+    /* Shared */
+    .badge { display:inline-block; padding: 2px 8px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: .85rem; }
+    .note { color: var(--muted); font-size: .9rem; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
+
+    header { margin-bottom: 10px; }
+    h1 { font-size: 1.6rem; margin: 0 0 6px; }
+    h2 { font-size: 1.25rem; margin: 28px 0 12px; }
+    h3 { font-size: 1.05rem; margin: 18px 0 8px; color: var(--muted); }
+
+    /* Profile section */
+    .profile { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .profile-grid { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: linear-gradient(135deg, #1f6feb, #a371f7);
+      display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size: 36px;
+      border: 2px solid var(--border);
+      overflow: hidden;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display:block; }
+    .headline { margin: 0 0 6px; font-size: 1.25rem; font-weight: 600; }
+    .roles { color: var(--muted); margin: 0 0 12px; }
+    .bio { margin: 0 0 12px; }
+    .profile-kv { display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; margin-top: 8px; }
+    .kv-label { color: var(--muted); }
+    .links { display:flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip { background: var(--panel); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+    @media (max-width: 720px) {
+      .profile-grid { grid-template-columns: 1fr; }
+      .profile-kv { grid-template-columns: 1fr; }
+      .avatar { width: 100px; height: 100px; font-size: 28px; }
+    }
+
+    /* Publications section */
+    .bar { display:flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 10px 0 18px; }
+    .bar input[type="text"] { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 6px 8px; border-radius: 6px; width: 260px; }
+    .bar button { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+    .bar button[disabled] { opacity: .6; cursor: not-allowed; }
+    .list { display: grid; gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+    .title { font-weight: 600; margin: 0 0 6px; }
+    .meta { color: var(--muted); font-size: .95rem; }
+    .footer { display:flex; gap: 10px; align-items:center; margin-top: 18px; }
+    .status { color: var(--muted); }
+    .status.ok { color: var(--ok); }
+    .status.err { color: var(--danger); }
+	.btn{
+      appearance:none; border:none; cursor:pointer; user-select:none;
+      background:linear-gradient(135deg, #6d28d9, #0ea5e9);
+      color:white; padding:10px 14px; border-radius:10px; font-weight:600;
+      letter-spacing:.01em; box-shadow: 0 10px 22px rgba(14,165,233,.25);
+      transition: transform .04s ease, filter .2s ease, box-shadow .2s ease;
+      white-space:nowrap;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.secondary{
+      background:linear-gradient(135deg, rgba(124,77,255,.12), rgba(20,184,166,.12));
+      color:#d7e0ff; border:1px solid #2b395e; box-shadow:none;
+    }
+    .btn.warning{
+      background:linear-gradient(135deg, #f59e0b, #ec4899);
+    }
+	.hero-badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center; padding:8px 12px;
+      background:var(--glass); border:var(--card-border); border-radius:10px; color:#dfe6ff;
+      font-size:13px;
+    }
+    .badge svg{width:16px; height:16px; opacity:.9}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Terry Cheuk‑Fung Yip, PhD</h1>
+      <!--<p class="note">Department of Medicine & Therapeutics, The Chinese University of Hong Kong · Medical Data Analytics Centre (MDAC)</p>-->
+    </header>
+
+    <!-- ===== Profile ===== -->
+    <section class="profile" aria-labelledby="profile">
+      <!--<h2 id="profile">Profile</h2>-->
+      <div class="profile-grid">
+        <!-- Optional headshot: replace src with your image URL, or remove the <img> and the initials will show -->
+        <div class="avatar" aria-hidden="true">
+          <!-- If you have a photo URL, paste it below and keep the <img>; otherwise delete the <img> to show initials -->
+          <img src="headshot.jpg" alt="Terry Cheuk‑Fung Yip">
+        </div>
+
+        <div>
+          <p class="headline">Co‑Director (Data Science), MDAC; Associate Professor</p>
+          <p class="roles">
+            Medical Data Analytics Centre (MDAC); Department of Medicine & Therapeutics, The Chinese University of Hong Kong. 
+          </p>
+
+          <p class="bio">
+            Clinical researcher focusing on chronic hepatitis B (CHB) and metabolic dysfunction–associated steatotic liver disease (MASLD),
+            leveraging large‑scale real‑world healthcare data and advanced analytics for risk assessment and outcome prediction. 
+            He has helped establish one of the largest long‑term CHB cohorts with HBsAg seroclearance and serves as a Principal Investigator
+            of the international VCTE‑Prognosis study on non‑invasive tests for MASLD outcomes. 
+            Awards include APASL Young Investigator (2018, 2022, 2023), AASLD Early Career Investigator (2020), and EASL Best Poster – Viral Hepatitis (2024).
+          </p>
+
+          <div class="profile-kv">
+            <div class="kv-label">Education</div>
+            <div>BSc (Statistics, Hons), MPhil (Risk Management Science), PhD (Medical Sciences), CUHK</div>
+
+            <div class="kv-label">Expertise</div>
+            <div>Chronic viral hepatitis; MASLD/MAFLD; risk modelling; real‑world clinical data</div>
+
+            <div class="kv-label">Research interests</div>
+            <div>Epidemiology of chronic liver diseases using healthcare databases and big‑data approaches</div>
+
+            <div class="kv-label">Editorial & service</div>
+            <div>Associate Editor, <em>Journal of Hepatology</em><br>Statistical Editor, <em>Clinical and Molecular Hepatology</em> 
+				<br>Editorial Boards: <em>CGH</em>, <em>AP&T</em>, <em>Hep Comm</em><br>AASLD HBV SIG - Communication Lead</div>
+          </div>
+
+          <div class="hero-badges" style="margin-top:6px" aria-label="Contact and profiles">
+            <a class="badge" href="mailto:tcfyip@cuhk.edu.hk">📧tcfyip@cuhk.edu.hk</a>
+            <a class="badge" href="https://mdac.cuhk.edu.hk/members/dr-terry-cheuk-fung-yip/" target="_blank" rel="noopener">🔗MDAC</a>
+            <a class="badge" href="https://orcid.org/0000-0002-1819-2464" target="_blank" rel="noopener">🔗ORCID</a>
+			<a class="badge" href="https://twitter.com/TerryYip12" target="_blank" rel="noopener">🔗X</a>
+			<a class="badge" href="https://www.linkedin.com/in/terry-cheuk-fung-yip" target="_blank" rel="noopener">🔗Linkedin</a>
+          </div>
+
+            <!-- Keeping the attribution in-page -->
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Publications ===== -->
+    <section aria-labelledby="pubs" style="margin-top: 28px;">
+      <h2 id="pubs">Publications (from PubMed)</h2>
+
+      <div class="bar">
+        <span class="badge" title="PubMed search query used">Query</span>
+        <span id="queryText" class="note"></span>
+      </div>
+
+      <div class="bar" aria-label="NCBI API settings (optional)">
+        <label>
+          <span class="sr-only">NCBI API key</span>
+          <input id="apiKey" type="text" placeholder="NCBI API key (optional)" />
+        </label>
+        <label>
+          <span class="sr-only">Contact email</span>
+          <input id="email" type="text" placeholder="Contact email for NCBI (recommended)" />
+        </label>
+        <button class="badge" id="saveCfgBtn" title="Save settings">Save</button>
+        <span class="note">Settings are stored locally in your browser.</span>
+      </div>
+
+      <div class="footer">
+        <button class="btn" id="refreshBtn">Refresh</button>
+        <button class="btn warning" id="loadMoreBtn">Load more</button>
+        <span id="countBadge" class="badge" aria-live="polite"></span>
+        <span id="status" class="status" role="status" aria-live="polite"></span>
+      </div>
+
+      <div id="list" class="list" aria-live="polite"></div>
+
+      <p class="note" style="margin-top:18px;">
+        Source: PubMed via NCBI E‑utilities. Data © U.S. National Library of Medicine. Please keep request rates within NCBI’s guidelines.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    // ---------- Configuration ----------
+    // Author query: adjust as needed.
+    const AUTHOR_QUERY = '((Yip TC[Author]) OR (Yip TCF[Author]) OR ("Terry Cheuk Fung Yip"[Author]))';
+
+    // Page size for "Load more"
+    const PAGE_SIZE = 20;
+
+    // ---------- State ----------
+    let retStart = 0;
+    let totalCount = 0;
+    let loading = false;
+
+    const els = {
+      list: document.getElementById('list'),
+      status: document.getElementById('status'),
+      loadMore: document.getElementById('loadMoreBtn'),
+      refresh: document.getElementById('refreshBtn'),
+      countBadge: document.getElementById('countBadge'),
+      queryText: document.getElementById('queryText'),
+      apiKey: document.getElementById('apiKey'),
+      email: document.getElementById('email'),
+      saveCfgBtn: document.getElementById('saveCfgBtn')
+    };
+
+    // ---------- Helpers ----------
+    function setStatus(msg, kind = '') {
+      els.status.textContent = msg || '';
+      els.status.className = 'status' + (kind ? (' ' + kind) : '');
+    }
+
+    function paramsWithCfg(extra = {}) {
+      const p = new URLSearchParams({
+        db: 'pubmed',
+        retmode: 'json',
+        ...extra
+      });
+      const key = localStorage.getItem('ncbi_api_key') || '';
+      const email = localStorage.getItem('ncbi_email') || '';
+      if (key) p.set('api_key', key);
+      if (email) p.set('email', email);
+      return p;
+    }
+
+    function buildESearch(term, start, max) {
+      const p = paramsWithCfg({
+        term,
+        usehistory: 'n',
+        retstart: String(start),
+        retmax: String(max),
+        sort: 'pub+date' // chronological, newest first
+      });
+      return 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?' + p.toString();
+    }
+
+    function buildESummary(ids) {
+      const p = paramsWithCfg({
+        db: 'pubmed',
+        id: ids.join(','),
+        retmode: 'json'
+      });
+      return 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?' + p.toString();
+    }
+
+    function fmtAuthors(arr) {
+      if (!Array.isArray(arr) || arr.length === 0) return '';
+      const names = arr.map(a => a.name || [a.authtype, a.lastname, a.forename].filter(Boolean).join(' ')).filter(Boolean);
+      if (names.length <= 3) return names.join(', ');
+      return names.slice(0, 3).join(', ') + ' et al.';
+    }
+
+    function getYear(str) {
+      if (!str) return '';
+      const m = String(str).match(/\b(19|20)\d{2}\b/);
+      return m ? m[0] : str;
+    }
+
+    function doiFromArticleIds(articleids = []) {
+      const item = articleids.find(x => x.idtype === 'doi');
+      return item?.value || '';
+    }
+
+    function createCard(item) {
+      const title = (item.title || '').replace(/\.$/, '');
+      const journal = item.fulljournalname || item.source || '';
+      const year = getYear(item.sortpubdate || item.pubdate || '');
+      const authors = fmtAuthors(item.authors || []);
+      const pmid = item.uid || item.pmid || '';
+      const doi = doiFromArticleIds(item.articleids || []);
+      const pmUrl = 'https://pubmed.ncbi.nlm.nih.gov/' + pmid + '/';
+      const doiUrl = doi ? ('https://doi.org/' + doi) : '';
+
+      const div = document.createElement('article');
+      div.className = 'card';
+      div.innerHTML = `
+        <div class="title"><a href="${pmUrl}" target="_blank" rel="noopener">${title}</a></div>
+        <div class="meta">
+          ${authors ? authors + '. ' : ''}${journal}${year ? ' (' + year + ')' : ''}.
+          ${doi ? ' <a href="' + doiUrl + '" target="_blank" rel="noopener">doi:' + doi + '</a>' : ''}
+        </div>
+      `;
+      return div;
+    }
+
+    function updateCountBadge() {
+      const shown = document.querySelectorAll('.card').length;
+      if (totalCount > 0) {
+        els.countBadge.textContent = `Showing ${shown} of ${totalCount}`;
+      } else {
+        els.countBadge.textContent = '';
+      }
+    }
+
+    async function fetchPage() {
+      if (loading) return;
+      loading = true;
+      els.loadMore.disabled = true;
+      els.refresh.disabled = true;
+      setStatus('Loading…');
+
+      try {
+        // 1) ESearch to get PMIDs
+        const esUrl = buildESearch(AUTHOR_QUERY, retStart, PAGE_SIZE);
+        const esRes = await fetch(esUrl, { cache: 'no-store' });
+        if (!esRes.ok) throw new Error('ESearch HTTP ' + esRes.status);
+        const es = await esRes.json();
+
+        const ids = es.esearchresult?.idlist || [];
+        totalCount = parseInt(es.esearchresult?.count || '0', 10);
+        if (ids.length === 0) {
+          if (retStart === 0) {
+            setStatus('No results found for the current query.', 'err');
+          } else {
+            setStatus('No more results.', 'ok');
+          }
+          updateCountBadge();
+          return;
+        }
+
+        // 2) ESummary to get details
+        const sumUrl = buildESummary(ids);
+        const sumRes = await fetch(sumUrl, { cache: 'no-store' });
+        if (!sumRes.ok) throw new Error('ESummary HTTP ' + sumRes.status);
+        const summary = await sumRes.json();
+
+        const uids = summary.result?.uids || [];
+        const items = uids.map(uid => summary.result[uid]).filter(Boolean);
+
+        // 3) Render
+        const frag = document.createDocumentFragment();
+        items.forEach(item => frag.appendChild(createCard(item)));
+        els.list.appendChild(frag);
+
+        // 4) Update state
+        retStart += ids.length;
+        updateCountBadge();
+        const done = retStart >= totalCount;
+        setStatus(done ? 'All results loaded.' : 'Ready.', done ? 'ok' : '');
+        els.loadMore.disabled = done;
+      } catch (err) {
+        console.error(err);
+        setStatus('Error loading publications: ' + err.message, 'err');
+      } finally {
+        loading = false;
+        els.refresh.disabled = false;
+        if (retStart < totalCount) { els.loadMore.disabled = false; }
+      }
+    }
+
+    function resetAndLoad() {
+      document.getElementById('list').innerHTML = '';
+      retStart = 0;
+      totalCount = 0;
+      els.loadMore.disabled = false;
+      fetchPage();
+    }
+
+    // ---------- Init ----------
+    (function init() {
+      // Show the query string in the UI
+      els.queryText.textContent = AUTHOR_QUERY;
+
+      // Restore settings
+      els.apiKey.value = localStorage.getItem('ncbi_api_key') || '';
+      els.email.value = localStorage.getItem('ncbi_email') || '';
+
+      // Wire up buttons
+      els.saveCfgBtn.addEventListener('click', () => {
+        localStorage.setItem('ncbi_api_key', els.apiKey.value.trim());
+        localStorage.setItem('ncbi_email', els.email.value.trim());
+        setStatus('Settings saved. Refreshing…');
+        resetAndLoad();
+      });
+
+      els.refresh.addEventListener('click', resetAndLoad);
+      els.loadMore.addEventListener('click', fetchPage);
+
+      // Initial load
+      resetAndLoad();
+    })();
+  </script>
+</body>
+</html>
