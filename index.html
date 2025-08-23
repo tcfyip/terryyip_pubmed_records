@@ -913,7 +913,8 @@
 
   <script>
     // ---------- Configuration ----------
-    const AUTHOR_QUERY = '((Yip TC[Author]) OR (Yip TCF[Author]) OR ("Terry Cheuk Fung Yip"[Author]))';
+	const currentYear = String(new Date().getFullYear());
+    const AUTHOR_QUERY = '((Yip TC[Author]) OR (Yip TCF[Author]) OR ("Terry Cheuk Fung Yip"[Author]) AND (2014:' + currentYear + '[pdat]))';
     const PAGE_SIZE = 20;
 
     // ---------- State ----------
